@@ -100,9 +100,9 @@ avg_lux_by_hr <- avg_24h_minute(streams) %>%
 
 
 ####################################
-# DRAFT ONLY
-# Read in files Files should be named by their id only
+# Read a batch of .csv files into the environment, which should be named by their id only
 
+# Argument loc = file path (with tailing /) of the files you want to read in.
 load_all_csv <- function(loc) {
   
   files <- list.files(path = loc, pattern = "*.csv")
