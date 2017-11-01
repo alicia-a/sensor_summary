@@ -94,3 +94,20 @@ avg_lux_by_hr <- avg_24h_minute(streams) %>%
 # Argument thresholds = vector of thresholds to evaluate (add later)
 
 # Use either mutate_at or summarise_at
+
+
+
+
+
+####################################
+# DRAFT ONLY
+# Read in files Files should be named by their id only
+
+load_all_csv <- function(loc) {
+  
+  files <- list.files(path = loc, pattern = "*.csv")
+  
+  for (i in 1:length(files)) {
+  assign(gsub("*.csv$", "", files[i]), read.csv(paste(loc,files[i], sep = "")), inherits = T)}
+
+  }
